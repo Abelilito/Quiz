@@ -1,20 +1,12 @@
 import s from "./style.module.css";
 
 export const ShowAnswer = ({ fn, questions, result, children }) => {
-  function progressBar() {
-    const range = 100 / questions.length;
-    const totalProgess = range * fn;
-    return totalProgess;
-  }
-
   return (
     <>
-      <progress id="file" max="100" value={progressBar()}></progress>
-      <h1>
-        {fn} / {questions.length}
+      <h1 className="text-4xl font-bold">
+        Réponses : {fn} / {questions.length}
       </h1>
-      <br />
-      <h1 className="text-4xl font-bold">Réponses</h1>
+
       {questions.map((question, index) => {
         question.yourAnswer = result[index];
         return (

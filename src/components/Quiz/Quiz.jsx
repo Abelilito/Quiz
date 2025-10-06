@@ -16,7 +16,7 @@ export const Quiz = () => {
       answer: "Somme",
     },
     {
-      question: "Qui est le gagnant de Roland garros 2025",
+      question: "Qui est le gagnant de Roland garros 2025 ?",
       options: ["Sinner", "Federer", "Alcaraz", "Patrick Sebastien"],
       answer: "Alcaraz",
     },
@@ -25,6 +25,7 @@ export const Quiz = () => {
   const [count, setCount] = useState(0);
   const [result, setResult] = useState([]);
   const [isClicked, setIsClicked] = useState(false);
+  const [range, setRange] = useState(100 / questions.length);
 
   function hanleIncrement(item, e) {
     setIsClicked(true);
@@ -33,6 +34,7 @@ export const Quiz = () => {
     setTimeout(function () {
       setCount(count + 1);
       setIsClicked(false);
+      setRange(range + range);
     }, 1000);
   }
 
@@ -50,6 +52,7 @@ export const Quiz = () => {
   function reset() {
     setCount(0);
     setResult([]);
+    setRange(100 / questions.length);
   }
 
   if (count + 1 > questions.length) {
@@ -64,7 +67,7 @@ export const Quiz = () => {
     );
   } else {
     return (
-      <ShowQuestion question={questions[count].question}>
+      <ShowQuestion question={questions[count].question} range={range}>
         <div className="flex gap-8 items-center md:justify-center flex-col md:flex-row">
           {questions[count].options.map((option, index) => (
             <CustomButton

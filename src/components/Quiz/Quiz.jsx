@@ -11,12 +11,12 @@ export const Quiz = () => {
       answer: "Facebook",
     },
     {
-      question: "Quel est de département de la ville d'Amiens",
+      question: "Quel est de département de la ville d'Amiens ?",
       options: ["Somme", "Oise", "L'île de France", "Yvelines"],
       answer: "Somme",
     },
     {
-      question: "Quel joeur a gagner l'edition de Roland garros 2025",
+      question: "Qui est le gagnant de Roland garros 2025",
       options: ["Sinner", "Federer", "Alcaraz", "Patrick Sebastien"],
       answer: "Alcaraz",
     },
@@ -55,21 +55,25 @@ export const Quiz = () => {
   if (count + 1 > questions.length) {
     return (
       <ShowAnswer fn={showResult()} questions={questions} result={result}>
-        <CustomButton text={"Recommencer"} fn={reset} />
+        <CustomButton
+          text={"Recommencer"}
+          fn={reset}
+          className="bg-purple-500 text-white font-bold"
+        />
       </ShowAnswer>
     );
   } else {
     return (
       <ShowQuestion question={questions[count].question}>
-        <div className="flex gap-8 justify-center">
+        <div className="flex gap-8 items-center md:justify-center flex-col md:flex-row">
           {questions[count].options.map((option, index) => (
             <CustomButton
               className={
                 isClicked
                   ? questions[count].answer === option
-                    ? "green"
-                    : "red"
-                  : ""
+                    ? "bg-green-400 text-white font-bold"
+                    : "bg-red-400 text-white font-bold"
+                  : "border-black text-black font-light"
               }
               key={index}
               text={option}

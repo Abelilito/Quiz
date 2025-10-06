@@ -1,5 +1,3 @@
-import s from "./style.module.css";
-
 export const ShowAnswer = ({ fn, questions, result, children }) => {
   return (
     <>
@@ -12,7 +10,7 @@ export const ShowAnswer = ({ fn, questions, result, children }) => {
         return (
           <div key={index} className="mb-8">
             <div className="mt-8">
-              <div className={s.question}>{"Question " + (index + 1)}</div>
+              <div className="question">{"Question " + (index + 1)}</div>
               <div>
                 Votre reponse est
                 <span className="font-bold"> {question.yourAnswer}</span>

@@ -7,7 +7,7 @@ const Progressbar = ({ range }) => {
   }
 
   return (
-    <div className="m-auto w-full md:w-[30%]">
+    <div className="m-auto w-full md:w-[70%] lg:w-[40%]">
       <div
         className="
           h-[18px] relative bg-transparent border border-solid border-grey w-full rounded-tl-full rounded-bl-full

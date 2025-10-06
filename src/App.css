@@ -1,36 +1,5 @@
 #root {
   width: 100%;
-  /* margin: 0 auto; */
   padding: 2rem;
   text-align: center;
-}
-
-.green {
-  background-color: green;
-  color: white;
-}
-.red {
-  background-color: red;
-  color: white;
-}
-.flex {
-  display: flex;
-}
-.gap-8 {
-  gap: 20px;
-}
-.justify-center {
-  justify-content: center;
-}
-.border-1 {
-  border: 1px solid black;
-}
-.mb-10 {
-  margin-bottom: 30px;
-}
-.outline-none:focus {
-  outline: none;
-}
-progress {
-  width: 35%;
 }

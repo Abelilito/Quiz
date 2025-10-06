@@ -1,5 +1,3 @@
-import s from "./style.module.css";
-
 export const ShowAnswer = ({ fn, questions, result, children }) => {
   function progressBar() {
     const range = 100 / questions.length;
@@ -18,7 +16,7 @@ export const ShowAnswer = ({ fn, questions, result, children }) => {
         question.yourAnswer = result[index];
         return (
           <div key={index}>
-            <div className={s.container}>
+            <div className="mt-8">
               <div>{"Question " + (index + 1)}</div>
               <div>{"La bonne reponse est " + question.answer}</div>
               <div>{"Votre reponse est " + question.yourAnswer}</div>
